@@ -48,6 +48,6 @@ test('DOM configuration 2', function(){
 	equals(elConfig2.model, 'stores', 'Checking properties');
 	equals(elConfig2.type, 1, 'Checking properties');
 	
-	ok(elConfig1.items.constructor === Array, 'Checking properties');
-	equals(elConfig1.items.length, 0, 'Checking properties');
+	ok(elConfig2.items.constructor === Array, 'Checking properties');
+	equals(elConfig2.items.length, 0, 'Checking properties');
 });

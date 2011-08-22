@@ -10,6 +10,8 @@
 var Cfg = function(element, attribute){	
 	var el = element,
 	
+	self = this,
+	
 	cfgAttribute = attribute || 'cfg',
 		
 	init = function(){
@@ -41,8 +43,8 @@ var Cfg = function(element, attribute){
 		if( !data || typeof data !== 'object' ) return;
 		
 		for(var prop in data){
-			if( data.hasOwnProperty( prop ) && !(prop in this) ){
-				this[prop] = data[prop];
+			if( data.hasOwnProperty( prop ) && !(prop in self) ){
+				self[prop] = data[prop];
 			}
 		}
 	},
