@@ -61,6 +61,6 @@ var Cfg = function(element, attribute){
 Cfg.config = new Cfg();
 
 //Exporting globals
-window.Cfg = Cfg;
+global.Cfg = Cfg;
 
 })(this);
