@@ -37,7 +37,7 @@ var Cfg = function(element, attribute){
 		return eval('({' + data + '})');
 	},
 	
-	mixin: function(data){
+	mixin = function(data){
 		if( !data || typeof data !== 'object' ) return;
 		
 		for(var prop in data){
@@ -47,35 +47,20 @@ var Cfg = function(element, attribute){
 		}
 	},
 	
-	resolve: function(){
+	resolve = function(){
 		var scripts = document.getElementsByTagName('script');
 		return scripts[ scripts.length - 1 ];
 	};
-	
-	
-	this.resolve = resolve;
 	
 	// go!
 	init();
 }; 
 
 
-/**
- * Initializing global configuration
- */
-Cfg.initGlobal = function(){	
-	var script = Cfg.prototype.resolve();
-	
-	if( script ){
-		Cfg.config = new Cfg(script);
-	}
-};
-
-
-// Storing global configuration
-Cfg.initGlobal();
+// Initializing global configuration
+Cfg.config = new Cfg();
 
 //Exporting globals
-global.Cfg = Cfg;
+window.Cfg = Cfg;
 
 })(this);
