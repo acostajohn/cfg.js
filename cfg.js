@@ -7,13 +7,29 @@
  */
 (function(global){
 
-var Cfg = function(element, attribute){	
+var Cfg = function(element, attribute){
+	
+	/**
+	 * DOM Node to apply configuration
+	 * @private
+	 **/
 	var el = element,
 	
+	/**
+	 * Reference to myself
+	 * @private
+	 **/
 	self = this,
 	
+	/**
+	 * Defines attribute where I can find the configuration data
+	 * @private
+	 **/	
 	cfgAttribute = attribute || 'cfg',
 		
+	/**
+	 * @constructor
+	 **/
 	init = function(){
 		if( !el || el.nodeType !== 1 ){
 			var script = resolve();
@@ -26,19 +42,34 @@ var Cfg = function(element, attribute){
 		mixin( getData(el) );
 	},
 	
+	/**
+	 * Fetches configuration data
+	 * @private
+	 * @param  {HTMLElement} el DOM Element to extract data
+	 * @returns {JSON} JSON notation
+	 **/
 	getData = function(el){
 		return parse( 'dataset' in el ? 
-						el.dataset[ cfgAttribute ] : 
-						el.getAttribute('data-'+ cfgAttribute )
-				);
+			el.dataset[ cfgAttribute ] : 
+			el.getAttribute('data-'+ cfgAttribute )
+		);
 	},
 	
+	/**
+	 * Parse data and returns its json notation
+	 * @private
+	 * @param {String} data String extrated from markup
+	 * @returns {Object} Native object representation of the configuration data
+	 **/
 	parse = function( data ){
-		if( !data ) return null;
-		
-		return eval('({' + data + '})');
+		return data ? eval('({' + data + '})') : null;
 	},
 	
+	/**
+	 * Mix an object with myself :P
+	 * @private
+	 * @param {Object} data Set of properties to mix with the object
+	 **/
 	mixin = function(data){
 		if( !data || typeof data !== 'object' ) return;
 		
@@ -49,6 +80,11 @@ var Cfg = function(element, attribute){
 		}
 	},
 	
+	/**
+	 * Get reference to last loaded tag script
+	 * @private
+	 * @param {String} data String extrated from markup
+	 **/
 	resolve = function(){
 		var scripts = document.getElementsByTagName('script');
 		return scripts[ scripts.length - 1 ];
