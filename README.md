@@ -14,6 +14,7 @@ Cfg.js is a small javacript tool that allows you to parse configuration data fro
 ## Usage
 
 index.html
+
 	<html>
 		<head>
 			<title>CfgJS Example</title>
