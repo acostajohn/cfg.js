@@ -26,3 +26,7 @@ index.html
 			<div id="main"></div>
 		</body>
 	</html>
+	
+	
+# Copyright and Licensing #
+* Copyright (c) 2011, John Acosta - @John_Acosta, released under the BSD-2 license.
