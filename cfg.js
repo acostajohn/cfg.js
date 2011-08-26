@@ -66,7 +66,7 @@ var Cfg = function(element, attribute){
 	},
 	
 	/**
-	 * Mix an object with myself :P
+	 * Mixes an object with myself :P
 	 * @private
 	 * @param {Object} data Set of properties to mix with the object
 	 **/
@@ -81,7 +81,7 @@ var Cfg = function(element, attribute){
 	},
 	
 	/**
-	 * Get reference to last loaded tag script
+	 * Gets reference to last loaded tag script
 	 * @private
 	 * @param {String} data String extrated from markup
 	 **/
@@ -101,4 +101,4 @@ Cfg.config = new Cfg();
 //Exporting globals
 global.Cfg = Cfg;
 
-})(this);
+})(this); // reference to global object
