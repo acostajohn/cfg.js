@@ -21,11 +21,11 @@ index.html
 			
 			<!-- Global configuration -->
 			<script type="text/javascript" src="cfg.js" 
-				dojo-cfg="modulesPath:'../application/modules/', listItems: 50, slideshow: {duration: 500, easing: 'backInOut'}"></script>
+				data-cfg="modulesPath:'../application/modules/', listItems: 50, slideshow: {duration: 500, easing: 'backInOut'}"></script>
 		
 			<!-- Specific script configuration -->
 			<script type="text/javascript" src="footer.js" 
-				dojo-cfg="animation:{ duration: 100, properties: {height: 500, opacity: 1000} }, sponsors: ['IBM','Google','StackOverflow', Github]"></script>
+				data-cfg="animation:{ duration: 100, properties: {height: 500, opacity: 1000} }, sponsors: ['IBM','Google','StackOverflow', Github]"></script>
 		</head>
 		<body>
 			<div id="main"></div>
