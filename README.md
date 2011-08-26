@@ -44,6 +44,7 @@ index.html
 ### Accesing to local configuration
 
 footer.js
+
 	(function(){
 		var config = new Cfg(); //loading configuration from current tag script
 		
